@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chat</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ebee;
+            margin: 20px;
+        }
+
+        .edit-box {
+            width: 80%;
+            max-width: 600px;
+            background: #ffffff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: none;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #00a8cc;
+            box-shadow: 0px 0px 6px rgba(0, 168, 204, 0.4);
+        }
+
+        button {
+            margin-top: 15px;
+            background-color: #00a8cc;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0089a8;
+            box-shadow: 2px 2px 8px rgba(16, 132, 158, 0.5);
+            transform: scale(1.04);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="edit-box">
+
+        <h3>Edit your chat: <%= chat._id %></h3>
+
+        <p>This chat was sent from <%= chat.from %> to <%= chat.to %></p>
+
+        <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+
+            <textarea name="msg" rows="5" cols="30"><%= chat.msg %></textarea>
+
+            <button>Edit</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
