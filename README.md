@@ -38,7 +38,4 @@ This project allows users to create, view, edit, and manage chat messages with a
 - index.js → Main server file
 - init.js → Database initialization
 
-▶️ How to Run Locally
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/VipinRaghuwanshi/Chat-Management-Web-Application.git
+
